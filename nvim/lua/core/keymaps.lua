@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
-
+local apiKeymap = vim.api.nvim_set_keymap
 ---------------------
 -- General Keymaps
 ---------------------
@@ -61,6 +61,11 @@ keymap.set("n", "<leader>hls", ":HopLineStart<cr>")
 
 -- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- markdown-preview.nvim
+
+apiKeymap('n', '<leader>mp', ':MarkdownPreview<cr>', {noremap = true, silent = true })
+apiKeymap('n', '<leader>mp', ":MarkdownPreviewStop<cr>", {noremap = true, silent = true })
 
 -- troubles
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
