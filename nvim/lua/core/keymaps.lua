@@ -2,6 +2,7 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap
+
 local apiKeymap = vim.api.nvim_set_keymap
 ---------------------
 -- General Keymaps
@@ -28,7 +29,7 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 ----------------------
--- Plugin Keybinds
+-- Plugin Keybindis
 ----------------------
 
 -- vim-maximizer
@@ -36,6 +37,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set("n", "<leader>ft", ":NvimTreeFindFile<CR>", { noremap = true, silent = true }) -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -62,10 +64,11 @@ keymap.set("n", "<leader>hls", ":HopLineStart<cr>")
 -- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
--- markdown-preview.nvim
+-- markdown-preview
 
-apiKeymap('n', '<leader>mp', ':MarkdownPreview<cr>', {noremap = true, silent = true })
-apiKeymap('n', '<leader>mp', ":MarkdownPreviewStop<cr>", {noremap = true, silent = true })
+apiKeymap('n', '<leader>mp', ":MarkdownPreview<cr>", { noremap = true, silent = true })
+
+apiKeymap('n', '<leader>ms', ':MarkdownPreviewStop<cr>', { noremap = true, silent = true})
 
 -- troubles
 vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
