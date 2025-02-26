@@ -7,6 +7,8 @@ local apiKeymap = vim.api.nvim_set_keymap
 ---------------------
 -- General Keymaps
 ---------------------
+-- save all change file
+keymap.set("n", "<leader>s", ":wa<CR>")
 
 -- use ii to exit insert mode, jk recommended
 keymap.set("i", "ii", "<ESC>")
@@ -52,6 +54,13 @@ keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>") -- list all git 
 keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git commits for current file/buffer (use <cr> to checkout) ["gfc" for git file commits]
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
+
+keymap.set("n", "<leader>ve", ":Telescope diagnostics<CR>", { noremap = true, silent = true }) -- show eslint error massage
+
+keymap.set("n", "<leader>gd", ":Telescope lsp_definitions<CR>", { noremap = true, silent = true }) -- go to references definition.
+
+keymap.set("n", "<leader>gr", ":Telescope lsp_references<CR>", { noremap = true, silent = true }) -- go to references.
+
 
 -- hop cmd
 keymap.set("n", "<leader>hw", ":HopWord<cr>")
