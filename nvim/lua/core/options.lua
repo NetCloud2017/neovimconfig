@@ -30,3 +30,15 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
+
+vim.diagnostic.config({
+  virtual_text = {
+    spacing = 2,           -- 行间距
+    wrap = true,           -- 启用自动换行
+    -- format = function(diagnostic)
+    --   -- 将换行符 \n 替换为空格并截断长消息
+    --   local message = diagnostic.message:gsub('\n', ' ')
+    --   return string.format("%s (%s)", message:sub(1, 120), diagnostic.source)
+    -- end
+  }
+})

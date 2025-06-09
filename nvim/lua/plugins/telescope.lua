@@ -11,6 +11,13 @@ if not actions_setup then
 end
 
 -- configure telescope
-telescope.setup({})
+telescope.setup({
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules/*"
+    },
+    hidden = true,
+  }
+})
 
 telescope.load_extension("fzf")

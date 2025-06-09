@@ -135,6 +135,20 @@ return packer.startup(function(use)
     ft = { "markdown" },
   })
 
+
+use{
+  "NeogitOrg/neogit",
+  requires = {
+    "nvim-lua/plenary.nvim",         -- required
+    "sindrets/diffview.nvim",        -- optional - Diff integration
+
+    -- Only one of these is needed.
+    "nvim-telescope/telescope.nvim", -- optional
+    "ibhagwan/fzf-lua",              -- optional
+    "echasnovski/mini.pick",         -- optional
+  },
+  config = true
+}
   if packer_bootstrap then
     require("packer").sync()
   end
